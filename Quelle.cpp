@@ -32,10 +32,9 @@ int main()
 
 		do
 		{
-			cout << "Bitte den Betrag fuer Postion " << anzahl1 + 1 << " eingeben: ";
+			cout << "Bitte den Betrag fuer Position " << anzahl1 + 1 << " eingeben: ";
 			cin >> einkEingabe[anzahl1];
-				if (cin.fail() != true)
-				{
+				
 					cout << "Bitte eine Bezeichnung eingeben: ";
 					cin >> einkommenBEZ[anzahl1];
 					anzahl1++;
@@ -44,15 +43,6 @@ int main()
 					cin >> check1;
 					cout << '\n';
 					cout << "########################################################################\n" << endl;
-				}
-				else
-				{
-
-					cout << "Die Eingabe war falsch\n\n";
-					cout << "Das Programm wird beendet" << endl;
-					return 0;
-					
-				}
 			
 
 		} while (check1 != 0);
@@ -81,14 +71,15 @@ int main()
 		do
 		{
 			cout << "Bitte den Betrag fuer die " << anzahl2 + 1 << ". Ausgabe eingeben: ";
-			cin >> einAusgabe[anzahl2];
-			cout << "Bitte eine Bezeichnung eingeben: ";
-			cin >> ausgabenBEZ[anzahl2];
-			anzahl2++;
-			cout << "\nWeitere Ausgaben erfassen? 1/JA - 0/NEIN\t";
-			cin >> check2;
-			cout << "########################################################################\n" << endl;
-
+			
+				cin >> einAusgabe[anzahl2];
+				cout << "Bitte eine Bezeichnung eingeben: ";
+				cin >> ausgabenBEZ[anzahl2];
+				anzahl2++;
+				cout << "\nWeitere Ausgaben erfassen? 1/JA - 0/NEIN\t";
+				cin >> check2;
+				cout << "########################################################################\n" << endl;
+			
 		} while (check2 != 0);
 
 		// Berechnugn der Ausgaben
@@ -112,6 +103,7 @@ int main()
 		cout << "\n########################################################################\n" << endl;
 
 		cout << "Ihre verfuegbaren Mittel betragen monatlich: " << einkommen - ausgaben << " EURO" << endl;
+		cout << "Ihre Ausgaben entsprechen " << (ausgaben / einkommen) * 100 << "% von Ihren einnahmen!" << endl;
 	
 		return 0;
 	
